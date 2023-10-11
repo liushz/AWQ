@@ -1,25 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Random Text Display</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Text from JSONL</title>
 </head>
 <body>
-    <button id="showButton">Show</button>
-    <div id="textContainer"></div>
-
-    <script>
-        document.getElementById("showButton").addEventListener("click", function () {
-            // 使用 fetch API 调用 run.py 并显示内容
-            fetch('run.py')
-                .then(response => response.text())
-                .then(data => {
-                    // 将数据显示在 textContainer 中
-                    document.getElementById("textContainer").innerHTML = data;
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
-        });
-    </script>
+    <button onclick="showRandomText()">Show</button>
+    <pre id="output"></pre>
+    <script src="script.js"></script>
 </body>
 </html>
