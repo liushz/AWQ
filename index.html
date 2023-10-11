@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Text Display</title>
+</head>
+<body>
+    <button id="showButton">Show</button>
+    <div id="textContainer"></div>
+
+    <script>
+        document.getElementById("showButton").addEventListener("click", function () {
+            // 使用 fetch API 调用 run.py 并显示内容
+            fetch('run.py')
+                .then(response => response.text())
+                .then(data => {
+                    // 将数据显示在 textContainer 中
+                    document.getElementById("textContainer").innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+    </script>
+</body>
+</html>
